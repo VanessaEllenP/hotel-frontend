@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato</title>
+  <link rel="shortcut icon" href="img/simpleHostIcon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/contato.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <div id="topo"></div>
+
+  <main class="container-contato">
+    <section class="info-contato">
+      <h2>Fale Conosco</h2>
+      <div class="bloco">
+        <span class="label">Telefone</span>
+        <p class="numero-simple">+55 71 9 9888-0000</p>
+      </div>
+      <div class="bloco">
+        <span class="label">E-mail</span>
+        <p class="email-simple">simplehost@gmail.com</p>
+      </div>
+    </section>
+
+<section class="formulario">
+  <form action="https://formsubmit.co/simplehost.contato@gmail.com" method="POST">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+
+    <label for="mensagem">Mensagem</label>
+    <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem" required></textarea>
+
+    <input type="hidden" name="_captcha" value="false">
+
+    <input type="hidden" name="_next" value="agradecimento.html">
+
+    <button type="submit" class="botao">Enviar</button>
+  </form>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <p class="endereco">Avenida Dendezeiros, 99<br>
+          Bonfim, Salvador, Bahia<br>
+          +55 71 9 9888-0000<br>
+          simplehost@gmail.com</p>
+      </div>
+
+      <div class="footer-column">
+        <a href="#">Sobre</a><br>
+        <a href="#">Contato</a><br>
+        <a href="#">Termos e Condições</a>
+      </div>
+
+      <div class="footer-column social">
+        <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a><br>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+
+      <div class="footer-column">
+        <p>Cadastre-se para receber promoções</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="E-mail">
+          <button type="submit">OK</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<!-- <script src="js/contato.js"></script> -->
+<script src="js/topo.js" defer></script>
+
+</html>

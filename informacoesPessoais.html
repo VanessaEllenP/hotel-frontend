@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informações Pessoais</title>
+  <link rel="shortcut icon" href="img/simpleHostIcon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/informacoesPessoais.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<a href=""></a>
+
+<body>
+
+  <div id="topo"></div>
+
+  <section class="form-section">
+    <h2><a href="conta.html"><i class="fa-solid fa-chevron-left"></a></i>Informações Pessoais</h2>
+
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" />
+    </div>
+
+    <div class="form-group">
+      <label for="sobrenome">Sobrenome</label>
+      <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" />
+    </div>
+
+    <div class="form-group">
+      <label for="dataNascimento">Data de Nascimento</label>
+      <input type="date" id="dataNascimento" />
+    </div>
+
+    <div class="form-group">
+      <label for="logradouro">Rua</label>
+      <input type="text" id="logradouro" placeholder="Digite o nome da rua" />
+    </div>
+
+    <div class="form-group">
+      <label for="bairro">Bairro</label>
+      <input type="text" id="bairro" placeholder="Digite seu bairro" />
+    </div>
+
+    <div class="form-group">
+      <label for="cidade">Cidade</label>
+      <input type="text" id="cidade" placeholder="Digite sua cidade" />
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado</label>
+      <input type="text" id="uf" placeholder="Digite seu estado" />
+    </div>
+
+    <div class="form-group">
+      <label for="cep">CEP</label>
+      <input type="text" id="cep" placeholder="_____-___" maxlength="9" />
+    </div>
+
+    <div class="form-group">
+      <label for="numero">Número</label>
+      <input type="text" id="numero" placeholder="Número da residência" />
+    </div>
+
+    <div class="form-group">
+      <label for="complemento">Complemento</label>
+      <input type="text" id="complemento" placeholder="Apartamento, casa, etc." />
+    </div>
+
+    <button id="salvarAlteracoes">Salvar Alterações</button>
+    <div id="mensagemSucesso"></div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <p class="endereco">Avenida Dendezeiros, 99<br>
+          Bonfim, Salvador, Bahia<br>
+          +55 71 9 9888-0000<br>
+          simplehost@gmail.com</p>
+      </div>
+
+      <div class="footer-column">
+        <a href="#">Sobre</a><br>
+        <a href="#">Contato</a><br>
+        <a href="#">Termos e Condições</a>
+      </div>
+
+      <div class="footer-column social">
+        <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a><br>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+
+      <div class="footer-column">
+        <p>Cadastre-se para receber promoções</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="E-mail">
+          <button type="submit">OK</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/informacoesPessoais.js" defer></script>
+  <script src="js/topo.js" defer></script>
+</body>
+
+</html>

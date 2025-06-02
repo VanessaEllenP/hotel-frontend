@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="shortcut icon" href="img/simpleHostIcon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <a href="index.html" class="voltar-btn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+
+  <div class="img-logo">
+    <img src="img/simplehost.png" alt="Simplehost Logo" />
+  </div>
+
+  <div class="caixa">
+    <div class="input-container">
+      <i class="fa-solid fa-envelope input-icon"></i>
+      <input type="text" placeholder="E-mail" class="email" />
+    </div>
+
+    <div class="input-container senha-container">
+      <i class="fa-solid fa-lock input-icon"></i>
+      <input type="password" placeholder="Senha" class="senha" id="campoSenha" />
+      <i class="fa-solid fa-eye toggle-senha" id="toggleSenha"></i>
+    </div>
+
+    <a href="senha.html" class="esqueceu-senha">Esqueceu a senha?</a>
+
+    <button class="button">ENTRAR</button>
+
+    <p class="cadastro-caixa">
+      Não tem uma conta?
+      <a href="cadastro.html" class="cadastro">FAÇA SEU CADASTRO</a>
+    </p>
+  </div>
+  <div id="mensagem" class="mensagem oculto"></div>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro</title>
+  <link rel="shortcut icon" href="img/simpleHostIcon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/cadastro.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <a href="login.html" class="voltar-btn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+
+  <div class="caixa">
+    <div class="img-logo">
+      <img src="img/simplehost.png" alt="Logo" />
+    </div>
+
+    <form class="formulario">
+      <input type="text" placeholder="Nome" class="nome" required />
+      <input type="text" placeholder="Sobrenome" class="sobrenome" required />
+      <input type="email" placeholder="E-mail" class="email" required />
+
+      <div class="caixa-telefone">
+        <input type="text" placeholder="DDD" class="ddd" required />
+        <input type="text" placeholder="Celular" class="celular" required />
+      </div>
+      
+<input
+  type="text"
+  name="dataNascimento"
+  id="dataNascimento"
+  placeholder="Data de Nascimento"
+  maxlength="10"
+  inputmode="numeric"
+  required
+/>
+
+
+      <div class="input-senha-container senha-container">
+        <input type="password" placeholder="Senha" class="senha" id="campoSenhaCadastro" required />
+        <i class="fa-solid fa-eye toggle-senha" id="toggleSenhaCadastro" style="cursor:pointer;"></i>
+      </div>
+
+      <div class="input-senha-container confirme-senha-container">
+        <input type="password" placeholder="Confirme a Senha" class="confirmeASenha" id="campoConfirmeSenhaCadastro"
+          required />
+        <i class="fa-solid fa-eye toggle-confirme-senha" id="toggleConfirmeSenhaCadastro" style="cursor:pointer;"></i>
+      </div>
+
+      <div class="botaoCaixa">
+        <button class="button" type="submit">Confirmar</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="modalConfirmacao" class="modal">
+    <div class="modal-conteudo">
+      <p id="mensagemModal">Cadastro realizado com sucesso!</p>
+      <button id="fecharModal">OK</button>
+    </div>
+  </div>
+
+  <script src="js/cadastro.js"></script>
+</body>
+
+</html>

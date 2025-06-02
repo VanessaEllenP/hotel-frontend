@@ -1,0 +1,296 @@
+:root {
+  --white: #FFFFFF;
+  --lion: #BE9B5B;
+  --indigo-dye: #2C4963;
+  --indigo-dye-2: #144877;
+  --gunmetal: #253543;
+  --lapis-lazuli: #2B5A85;
+  --indigo-dye-3: #034970;
+  --safety-orange: #FF7700;
+  --black: #000000;
+  --rich-black: #071929;
+  --federal-blue: #040E4F;
+  --platinum: #DCDEE0;
+  --ecru: #E0B973;
+  --blue-indigo: #154878;
+}
+
+@font-face {
+  font-family: 'mont';
+  src: url("/font/montserrat.ttf");
+}
+
+body {
+  margin: 0;
+  background-color: var(--blue-indigo);
+  color: var(--white);
+  font-family: 'mont';
+}
+
+header {
+  position: relative;
+}
+
+.img-logo {
+  position: absolute;
+  top: 1px;
+  left: 10px;
+  z-index: 2;
+}
+
+.img-logo img {
+  width: 170px;
+  height: auto;
+}
+
+.topo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 40px;
+  gap: 30px;
+  z-index: 3;
+  background: transparent;
+}
+
+.topo a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.topo a:hover {
+  background-color: var(--federal-blue);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--indigo-dye-3);
+}
+
+
+/* CONTEÚDO DA PÁGINA */
+.container-contato {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 150px auto;
+  padding: 40px;
+  background-color: var(--blue-indigo);
+  gap: 50px;
+}
+
+.info-contato {
+  flex: 1;
+  padding-right: 40px;
+  text-align: center;
+}
+
+.info-contato h2 {
+  font-size: 35px;
+  margin-bottom: 110px;
+}
+
+.bloco {
+  margin-bottom: 40px;
+}
+
+.label {
+  background-color: var(--rich-black);
+  padding: 5px 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.info-contato p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.formulario {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario label {
+  background-color: var(--rich-black);
+  color: var(--white);
+  padding: 5px 10px;
+  width: fit-content;
+  font-size: 14px;
+  margin-bottom: 12px; 
+  display: inline-block; 
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.formulario textarea {
+  height: 150px;
+  resize: none;
+}
+
+.botao {
+  margin-top: 10px;
+  background-color: var(--lion);
+  color: var(--white);
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.botao:hover {
+  background-color: #a67e3c;
+}
+
+.footer {
+  background-color: #02094D;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 10;
+  font-family: mont;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column p {
+  color: white;
+  /* Muda o texto para branco no rodapé */
+  font-size: 18px;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 25px;
+  margin-left: 90px;
+}
+
+.footer-column.social a span {
+  margin-right: 8px;
+}
+
+.newsletter-form {
+  display: flex;
+  border: 1px solid #F2C883;
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: #F2C883;
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.endereco {
+  margin-left: 50px;
+}
+
+.footer-column.social i {
+  margin-right: 8px;
+  color: #fff;
+}
+
+.footer-column.social a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.footer-column.social a:hover i {
+  color: #f8c146; /* ou outra cor ao passar o mouse */
+}
+
+.user-menu-container {
+    position: relative;
+    display: inline-block;
+    left: 5px;
+}
+
+.user-button {
+    background-color: var(--white);
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    padding: 7px 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.user-button i {
+    color: #333;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 65px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 160px;
+    overflow: hidden;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+

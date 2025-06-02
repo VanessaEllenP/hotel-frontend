@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acomodações</title>
+    <link rel="shortcut icon" href="img/simpleHostIcon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/acomodacoes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <a href="index.html" class="voltar-btn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+
+  <div id="topo"></div>
+
+
+    <h1 class="titulo-acomodacoes">Acomodações</h1>
+
+    <div class="container-acomodacoes" id="quartos-container">
+        <!-- Os quartos serão carregados dinamicamente pelo JavaScript -->
+    </div>
+
+<div class="paginacao">
+    <button id="pagina-anterior" onclick="paginaAnterior()">
+        <i class="fa-solid fa-chevron-left"></i> Página anterior
+    </button>
+    <span id="numero-pagina">Página 1</span>
+    <button id="proxima-pagina" onclick="proximaPagina()">
+        Próxima página <i class="fa-solid fa-chevron-right"></i>
+    </button>
+</div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <p class="endereco">Avenida Dendezeiros, 99<br>
+                    Bonfim, Salvador, Bahia<br>
+                    +55 71 9 9888-0000<br>
+                    simplehost@gmail.com</p>
+            </div>
+
+            <div class="footer-column">
+                <a href="#">Sobre</a><br>
+                <a href="#">Contato</a><br>
+                <a href="#">Termos e Condições</a>
+            </div>
+
+            <div class="footer-column social">
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a><br>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+              </div>
+
+            <div class="footer-column">
+                <p>Cadastre-se para receber promoções</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="E-mail">
+                    <button type="submit">OK</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/topo.js" defer></script>    
+    <script src="js/acomodacoes.js"></script>
+</body>
+
+</html>

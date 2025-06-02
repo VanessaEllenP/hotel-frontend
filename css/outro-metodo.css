@@ -1,0 +1,184 @@
+:root {
+    --white: #FFFFFFff;
+    --lion: #BE9B5Bff;
+    --indigo-dye: #2C4963ff;
+    --indigo-dye-2: #144877ff;
+    --gunmetal: #253543ff;
+    --lapis-lazuli: #326089ff;
+    --indigo-dye-3: rgba(3, 74, 112, 0.778);
+    --safety-orange: #FF7700ff;
+    --black: #000000ff;
+    --rich-black: #071929ff;
+    --federal-blue: #040E4Fff;
+    --platinum: #DCDEE0ff;
+    --ecru: #E0B973ff;
+    --blue-indigo: #154878;
+    --lapis-lazuli: #2B5A85ff;
+}
+
+@font-face {
+    font-family: 'mont';
+    src: url("/font/montserrat.ttf");
+  }  
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'mont';
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-color: var(--blue-indigo);
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.img-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    z-index: 2;
+}
+
+.img-logo img {
+    width: 250px;
+    height: auto;
+}
+
+
+.caixa {
+    width: 746px;
+    height: 854px;
+    background-color: var(--gunmetal);
+    /* Cor de fundo para destaque */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Espaçamento entre os elementos */
+    background-color: var(--lapis-lazuli);
+}
+
+input {
+    width: 250px;
+    /* Largura maior */
+    height: 40px;
+    /* Altura maior */
+    padding: 10px;
+    /* Espaçamento interno */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    border: none;
+    outline: none;
+    font-size: 16px;
+    /* Texto mais legível */
+}
+
+.button {
+    width: 260px;
+    /* Para combinar com os inputs */
+    height: 45px;
+    /* Botão mais alto */
+    background-color: var(--federal-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.metodo {
+    width: 348.9px;
+    height: 23.02px;
+    flex-shrink: 0;
+    color: #FF9100;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 100%;
+}
+
+
+.botao-caixa {
+    margin-top: 230px;
+}
+
+.voltar-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--federal-blue);
+    color: var(--platinum);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  .voltar-btn:hover {
+    background-color: var(--indigo-dye);
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+  }
+  
+
+.telefone,
+.senha,
+.nova-senha {
+  display: flex;
+  width: 250px;
+  height: 30px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #FFF;
+  background: transparent;
+  color: white;
+}
+
+.voltar-btn {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    background-color: var(--rich-black);
+    color: var(--platinum);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 19px;
+    transition: background-color 0.3s;
+  }
+  
+  .voltar-btn:hover {
+    background-color: var(--indigo-dye);
+  }

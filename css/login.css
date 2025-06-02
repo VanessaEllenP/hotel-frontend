@@ -1,0 +1,187 @@
+:root {
+  --white: #FFFFFFff;
+  --lion: #BE9B5Bff;
+  --indigo-dye: #2C4963ff;
+  --indigo-dye-2: #144877ff;
+  --gunmetal: #253543ff;
+  --lapis-lazuli: #2B5A85ff;
+  --safety-orange: #FF7700ff;
+  --black: #000000ff;
+  --rich-black: #071929ff;
+  --federal-blue: #040E4Fff;
+  --platinum: #DCDEE0ff;
+  --ecru: #E0B973ff;
+  --blue-indigo: #154878;
+}
+
+@font-face {
+  font-family: 'mont';
+  src: url("/font/montserrat.ttf");
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'mont', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--blue-indigo);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.img-logo {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.img-logo img {
+  width: 250px;
+  height: auto;
+}
+
+.caixa {
+  width: 746px;
+  height: 854px;
+  background-color: var(--lapis-lazuli);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.input-container {
+  position: relative;
+  width: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--white);
+  font-size: 18px;
+}
+
+.toggle-senha {
+  position: absolute;
+  right: 10px;
+  color: var(--white);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.email,
+.senha {
+  width: 85%;
+  height: 25px;
+  padding: 8px 10px 8px 35px;
+  border-radius: 10px;
+  border: 1px solid #FFF;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.email::placeholder,
+.senha::placeholder {
+  color: var(--white);
+}
+
+.button {
+  width: 250px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: var(--federal-blue);
+  color: var(--platinum);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.esqueceu-senha {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.cadastro-caixa {
+  position: absolute;
+  bottom: 100px;
+  color: var(--white);
+  font-size: 18px;
+}
+
+.cadastro {
+  color: var(--safety-orange);
+}
+
+.voltar-btn {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: var(--rich-black);
+  color: var(--platinum);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 19px;
+  transition: background-color 0.3s;
+}
+
+.voltar-btn:hover {
+  background-color: var(--indigo-dye);
+}
+
+.mensagem {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--federal-blue);
+  color: var(--platinum);
+  padding: 18px 30px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, top 0.3s;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.mensagem.sucesso {
+  background-color: #4CAF50;
+}
+
+.mensagem.erro {
+  background-color: #E74C3C;
+}
+
+.mensagem.visivel {
+  opacity: 1;
+}
+
+.oculto {
+  display: none;
+}

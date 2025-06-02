@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagamento Confirmado</title>
+  <link rel="shortcut icon" href="img/simpleHostIcon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/pagamento-confirmado.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Botão Voltar -->
+  <a href="acomodacoes.html" class="voltar-btn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+
+  <div id="topo"></div>
+
+  <!-- Ícone de confirmação -->
+  
+  <!-- Caixa de dados -->
+  <div class="caixa-total">
+      <div class="icone-confirmado">
+          <i class="fa-solid fa-circle-check"></i>
+      </div>
+    <h1 id="reservaId">Reserva #</h1>
+    <p><strong>Tipo Acomodação:</strong> <span id="tipoAcomodacao">...</span></p>
+    <p><strong>Check-in:</strong> <span id="checkin">--</span></p>
+    <p><strong>Check-out:</strong> <span id="checkout">--</span></p>
+    <p><strong>Total:</strong> <span id="total">--</span></p>
+  </div>
+
+  <script src="js/pagamento-confirmado.js"></script>
+  <script src="js/topo.js" defer></script>
+</body>
+
+</html>

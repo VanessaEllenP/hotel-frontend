@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quarto - SimpleHost</title>
+  <link rel="shortcut icon" href="img/simpleHostIcon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/quarto.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <a href="acomodacoes.html" class="voltar-btn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+
+  <div id="topo"></div>
+
+  <main class="quarto-container">
+    <div class="quarto-imagem">
+      <img id="imagem-quarto" src="" alt="Imagem do Quarto" />
+    </div>
+
+    <div class="quarto-reserva">
+      <h2 id="preco"></h2>
+      <form>
+        <label>Check-in</label>
+        <input type="date" name="checkin" />
+        <label>Check-out</label>
+        <input type="date" name="checkout" />
+        <label>Nº de Pessoas</label>
+        <input type="number" name="pessoas" value="1" min="1" />
+        <div class="total">
+          Total: <strong id="total-preco">R$0,00</strong>
+        </div>
+        <button type="button" id="reservarBtn">Reservar</button>
+      </form>
+    </div>
+  </main>
+
+  <section class="quarto-info">
+    <div class="topo-info">
+      <p id="descricao"></p>
+    </div>
+    <hr />
+    <div class="comodidades">
+      <h3>Comodidades:</h3>
+      <ul id="lista-comodidades" class="lista-comodidades"></ul>
+    </div>
+
+    <hr />
+    <div class="horarios">
+      <p><strong>Check-in:</strong> 14:00</p>
+      <p><strong>Check-out:</strong> 12:00</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <p class="endereco">Avenida Dendezeiros, 99<br>
+                Bonfim, Salvador, Bahia<br>
+                +55 71 9 9888-0000<br>
+                simplehost@gmail.com</p>
+        </div>
+
+        <div class="footer-column">
+            <a href="#">Sobre</a><br>
+            <a href="#">Contato</a><br>
+            <a href="#">Termos e Condições</a>
+        </div>
+
+        <div class="footer-column social">
+            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a><br>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+
+        <div class="footer-column">
+            <p>Cadastre-se para receber promoções</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="E-mail">
+                <button type="submit">OK</button>
+            </form>
+        </div>
+    </div>
+</footer>
+
+  <script src="js/quarto.js"></script>
+  <script src="js/topo.js" defer></script>
+</body>
+
+</html>

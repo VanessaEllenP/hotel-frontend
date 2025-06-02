@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alterar E-mail</title>
+  <link rel="shortcut icon" href="img/simpleHostIcon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/alterarEmail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <div id="topo"></div>
+
+  <section class="form-section">
+    <h2><a href="conta.html"><i class="fa-solid fa-chevron-left"></i></a>Alterar e-mail</h2>
+
+    <div class="form-group">
+      <label for="email-atual">E-mail atual</label>
+      <input type="email" id="email-atual" placeholder="email@atual.com">
+    </div>
+
+    <div class="form-group">
+      <label for="novo-email">Novo e-mail</label>
+      <input type="email" id="novo-email" placeholder="novo@email.com">
+    </div>
+
+    <button id="alterarEmail">Alterar o e-mail</button>
+    <div id="mensagemEmail"></div>
+  </section>
+
+      <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <p class="endereco">Avenida Dendezeiros, 99<br>
+                    Bonfim, Salvador, Bahia<br>
+                    +55 71 9 9888-0000<br>
+                    simplehost@gmail.com</p>
+            </div>
+
+            <div class="footer-column">
+                <a href="#">Sobre</a><br>
+                <a href="#">Contato</a><br>
+                <a href="#">Termos e Condições</a>
+            </div>
+
+            <div class="footer-column social">
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a><br>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+              </div>
+
+            <div class="footer-column">
+                <p>Cadastre-se para receber promoções</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="E-mail">
+                    <button type="submit">OK</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+  <script src="js/alterarEmail.js" defer></script>
+  <script src="js/topo.js" defer></script>
+</body>
+
+</html>

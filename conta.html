@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/simpleHostIcon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/conta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Minha Conta</title>
+</head>
+
+<body>
+
+    <a href="acomodacoes.html" class="voltar-btn" aria-label="Voltar para acomodações">
+        <i class="fa-solid fa-arrow-left"></i> Voltar
+    </a>
+
+    <div id="topo"></div>
+
+    <main class="container">
+        <h1 class="titulo">Minha Conta</h1>
+
+        <div class="grid">
+            <section class="coluna">
+                <h2 class="secao">Informações Pessoais</h2>
+
+                <a href="informacoesPessoais.html">
+                    <div class="card">
+                        <div class="info">
+                            <strong>Geral</strong>
+                            <span>Gerenciar dados pessoais</span>
+                        </div>
+                        <span class="seta"><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="alterarEmail.html">
+                    <div class="card">
+                        <div class="info">
+                            <strong id="emailUsuario">seu.email@exemplo.com</strong>
+                            <span>Alterar E-mail</span>
+                        </div>
+                        <span class="seta"><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="alterarCelular.html">
+                    <div class="card">
+                        <div class="info">
+                            <strong id="telefoneUsuario">+55 (00) 00000-0000</strong>
+                            <span>Alterar o número de telefone</span>
+                        </div>
+                        <span class="seta"><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </a>
+            </section>
+
+            <section class="coluna">
+                <h2 class="secao">Segurança</h2>
+
+                <a href="alterarSenha.html">
+                    <div class="card">
+                        <div class="info">
+                            <strong>Senha</strong>
+                            <span>Alterar senha</span>
+                        </div>
+                        <span class="seta"><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </a>
+
+                <h2 class="secao">Comunicação</h2>
+
+                <a href="notificacao.html">
+                    <div class="card">
+                        <div class="info">
+                            <strong>Notificações</strong>
+                            <span>Preferências de notificações e contato</span>
+                        </div>
+                        <span class="seta"><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <p class="endereco">Avenida Dendezeiros, 99<br>
+                    Bonfim, Salvador, Bahia<br>
+                    +55 71 9 9888-0000<br>
+                    simplehost@gmail.com</p>
+            </div>
+
+            <div class="footer-column">
+                <a href="#">Sobre</a><br>
+                <a href="#">Contato</a><br>
+                <a href="#">Termos e Condições</a>
+            </div>
+
+            <div class="footer-column social">
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a><br>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+
+            <div class="footer-column">
+                <p>Cadastre-se para receber promoções</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="E-mail">
+                    <button type="submit">OK</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/conta.js" defer></script>
+    <script src="js/topo.js" defer></script>
+</body>
+
+</html>
