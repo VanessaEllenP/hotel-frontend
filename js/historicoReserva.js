@@ -24,13 +24,12 @@ async function carregarHistoricoReservas() {
     const token = usuarioLogado.token;
 
     try {
-        const response = await fetch('http://localhost:3000/api/reservas', {
+        const response = await fetch('https://hotel-backend-la2w.onrender.com/api/reservas', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         });
-
 
         if (!response.ok) {
             container.innerHTML = '<p>Erro ao carregar reservas: acesso não autorizado.</p>';
@@ -51,15 +50,15 @@ async function carregarHistoricoReservas() {
             const imgSrc = imagensTipoQuarto[reserva.FK_TIPOQUARTO_idTipoQuarto] || 'img/default.jpg';
 
             card.innerHTML = `
-        <img src="${imgSrc}" alt="Imagem do tipo de quarto" class="reserva-img">
-        <div class="reserva-info">
-          <h2>Reserva #${reserva.idReserva}</h2>
-          <p>Data de check-in: ${formatarData(reserva.dtInicial)}</p>
-          <p>Data de check-out: ${formatarData(reserva.dtFinal)}</p>
-          <p>Status: ${reserva.statusReserva}</p>
-        </div>
-        <button class="btn-reserva" onclick="verDetalhes(${reserva.idReserva})">Ver Detalhes</button>
-      `;
+                <img src="${imgSrc}" alt="Imagem do tipo de quarto" class="reserva-img">
+                <div class="reserva-info">
+                    <h2>Reserva #${reserva.idReserva}</h2>
+                    <p>Data de check-in: ${formatarData(reserva.dtInicial)}</p>
+                    <p>Data de check-out: ${formatarData(reserva.dtFinal)}</p>
+                    <p>Status: ${reserva.statusReserva}</p>
+                </div>
+                <button class="btn-reserva" onclick="verDetalhes(${reserva.idReserva})">Ver Detalhes</button>
+            `;
 
             container.appendChild(card);
         });

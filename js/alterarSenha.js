@@ -64,7 +64,7 @@ botaoAlterarSenha.addEventListener('click', async () => {
   };
 
   try {
-    const res = await fetch(`http://localhost:3000/api/clientes/${idCliente}/senha`, {
+    const res = await fetch(`https://hotel-backend-la2w.onrender.com/api/clientes/${idCliente}/senha`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

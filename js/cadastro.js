@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const botaoSenha = document.getElementById("toggleSenhaCadastro");
   const botaoConfirmeSenha = document.getElementById("toggleConfirmeSenhaCadastro");
 
-    const input = document.getElementById('dataNascimento');
+  const input = document.getElementById('dataNascimento');
 
   input.addEventListener('input', (e) => {
     let value = input.value.replace(/\D/g, ''); // Remove tudo que não for número
@@ -44,6 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
   configurarToggleSenha(botaoSenha, senhaInput);
   configurarToggleSenha(botaoConfirmeSenha, confirmeSenhaInput);
 
+  function formatarDataParaISO(dataBr) {
+    const [dia, mes, ano] = dataBr.split('/');
+    return `${ano}-${mes}-${dia}`;
+  }
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -52,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.querySelector(".email").value.trim();
     const ddd = document.querySelector(".ddd").value.trim();
     const celular = document.querySelector(".celular").value.trim();
-    const dataNascimento = document.querySelector(".dataDeNascimento").value;
+    const dataBr = document.getElementById("dataNascimento").value;
     const senha = senhaInput.value;
     const confirmeASenha = confirmeSenhaInput.value;
 
@@ -72,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     }
 
-    if (!nome || !sobrenome || !email || !ddd || !celular || !dataNascimento || !senha || !confirmeASenha) {
+    if (!nome || !sobrenome || !email || !ddd || !celular || !dataBr || !senha || !confirmeASenha) {
       mostrarModal("Por favor, preencha todos os campos.");
       return;
     }
@@ -82,8 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    const dataNascimento = formatarDataParaISO(dataBr);
+
     try {
-      const response = await fetch("http://localhost:3000/api/clientes", {
+      const response = await fetch("https://hotel-backend-la2w.onrender.com/api/clientes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

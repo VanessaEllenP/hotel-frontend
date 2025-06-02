@@ -18,7 +18,7 @@ async function carregarQuartos() {
   container.innerHTML = ''; // Limpa conteúdo atual
 
   try {
-    const response = await fetch('http://localhost:3000/api/quartos/com-tipo');
+    const response = await fetch('https://hotel-backend-la2w.onrender.com/api/quartos/com-tipo');
     const quartos = await response.json();
 
     const inicio = (paginaAtual - 1) * quartosPorPagina;

@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     mensagemEmail.style.backgroundColor = sucesso ? 'rgba(0, 128, 0, 0.2)' : 'rgba(255, 0, 0, 0.2)';
     mensagemEmail.style.color = sucesso ? '#00ff88' : '#ff6b6b';
     
-    // Esconde depois de 4 segundos
     setTimeout(() => {
       mensagemEmail.style.display = 'none';
     }, 4000);
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Carregar e preencher o email atual
   async function carregarEmailAtual() {
     try {
-      const res = await fetch(`http://localhost:3000/api/clientes/${idCliente}`, {
+      const res = await fetch(`https://hotel-backend-la2w.onrender.com/api/clientes/${idCliente}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/clientes/${idCliente}/email`, {
+      const res = await fetch(`https://hotel-backend-la2w.onrender.com/api/clientes/${idCliente}/email`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

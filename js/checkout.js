@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     try {
       // Chamada PUT para atualizar reserva com status CONFIRMADA
-      const response = await fetch(`http://localhost:3000/api/reservas/${reservaId}`, {
+      const response = await fetch(`https://hotel-backend-la2w.onrender.com/api/reservas/${reservaId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

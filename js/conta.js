@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // Busca dados do cliente na API usando token no header
-        const resposta = await fetch(`http://localhost:3000/api/clientes/${idCliente}`, {
+        const resposta = await fetch(`https://hotel-backend-la2w.onrender.com/api/clientes/${idCliente}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         emailElement.textContent = cliente.email || 'Não cadastrado';
 
         // Busca telefones do cliente, rota separada, também protegida
-        const telefoneResponse = await fetch(`http://localhost:3000/api/telefones/cliente/${idCliente}`, {
+        const telefoneResponse = await fetch(`https://hotel-backend-la2w.onrender.com/api/telefones/cliente/${idCliente}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

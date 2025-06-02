@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Função para preencher os inputs com os dados do cliente
     async function carregarDados() {
         try {
-            const res = await fetch(`http://localhost:3000/api/clientes/${idCliente}`, {
+            const res = await fetch(`https://hotel-backend-la2w.onrender.com/api/clientes/${idCliente}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
 
         try {
-            const res = await fetch(`http://localhost:3000/api/clientes/${idCliente}`, {
+            const res = await fetch(`https://hotel-backend-la2w.onrender.com/api/clientes/${idCliente}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

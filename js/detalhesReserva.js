@@ -24,7 +24,7 @@ async function carregarDetalhesReserva() {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/api/reservas/${idReserva}`, {
+        const response = await fetch(`https://hotel-backend-la2w.onrender.com/api/reservas/${idReserva}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${usuarioLogado.token}`
@@ -46,7 +46,7 @@ async function carregarDetalhesReserva() {
 
 // Função para preencher a tela com os dados da reserva
 function preencherDetalhes(reserva) {
-        console.log("Dados da reserva recebidos:", reserva);
+    console.log("Dados da reserva recebidos:", reserva);
     const imagensTipoQuarto = {
         1: 'img/quarto 1.jpg',
         2: 'img/quarto 2.jpg',

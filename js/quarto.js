@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
+    const API_BASE_URL = 'https://hotel-backend-la2w.onrender.com/api';
+
     function getQuartoIdFromUrl() {
         const params = new URLSearchParams(window.location.search);
         return params.get('id');
@@ -49,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     async function buscarDadosQuarto(id) {
         try {
-            const res = await fetch(`http://localhost:3000/api/quartos/detalhes/${id}`);
+            const res = await fetch(`${API_BASE_URL}/quartos/detalhes/${id}`);
             if (!res.ok) throw new Error('Erro ao buscar dados do quarto');
             const dados = await res.json();
             return dados;
@@ -131,7 +133,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
 
             try {
-                const resCriar = await fetch('http://localhost:3000/api/reservas', {
+                const resCriar = await fetch(`${API_BASE_URL}/reservas`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -149,7 +151,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 if (!resCriar.ok) throw new Error('Erro ao criar reserva');
 
                 const reserva = await resCriar.json();
-                const reservaId = reserva.id; // <-- Aqui a correção
+                const reservaId = reserva.id;
 
                 const total = (parseInt(noitesInput.value || '1') * precoPorNoite).toFixed(2);
                 window.location.href = `checkout.html?reserva=${reservaId}&total=${total}&quarto=${encodeURIComponent(nomeTipoInput.value)}&checkin=${checkin}&checkout=${checkout}`;

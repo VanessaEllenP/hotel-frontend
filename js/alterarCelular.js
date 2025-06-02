@@ -53,7 +53,7 @@ function formatarTelefone(ddd, telefone) {
 
 async function carregarTelefoneAtual() {
   try {
-    const res = await fetch(`http://localhost:3000/api/telefones/cliente/${idCliente}`, {
+    const res = await fetch(`https://hotel-backend-la2w.onrender.com/api/telefones/cliente/${idCliente}`, {
       headers: { 'Authorization': `Bearer ${token}` }
     });
 
@@ -91,7 +91,6 @@ async function alterarTelefone() {
     return;
   }
 
-  // Validação: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX
   const telefoneRegex = /^\((\d{2})\)\s\d{4,5}-\d{4}$/;
 
   const match = novoTelefoneRaw.match(telefoneRegex);
@@ -111,7 +110,7 @@ async function alterarTelefone() {
   };
 
   try {
-    const res = await fetch(`http://localhost:3000/api/telefones/cliente/${idCliente}`, {
+    const res = await fetch(`https://hotel-backend-la2w.onrender.com/api/telefones/cliente/${idCliente}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
