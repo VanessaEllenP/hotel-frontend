@@ -1,8 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
     const isLoginPage = window.location.pathname.includes('login') || window.location.pathname.includes('cadastro');
-    const usuarioLogado = localStorage.getItem('usuarioLogado'); // Simulação de login
 
-    const topoHtml = usuarioLogado && !isLoginPage
+    let usuarioLogado = localStorage.getItem('usuarioLogado');
+    let tokenValido = false;
+
+    if (usuarioLogado) {
+        try {
+            usuarioLogado = JSON.parse(usuarioLogado);
+            const token = usuarioLogado.token;
+
+            if (token && !isTokenExpirado(token)) {
+                tokenValido = true;
+            } else {
+                localStorage.removeItem('usuarioLogado');
+                localStorage.removeItem('idCliente');
+                usuarioLogado = null;
+            }
+        } catch (e) {
+            localStorage.removeItem('usuarioLogado');
+            localStorage.removeItem('idCliente');
+            usuarioLogado = null;
+        }
+    }
+
+    const topoHtml = tokenValido && !isLoginPage
         ? `
         <header class="topo">
             <div class="img-logo">
@@ -57,8 +78,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Verifica se o token expirou
+function isTokenExpirado(token) {
+    try {
+        const payloadBase64 = token.split('.')[1];
+        const payload = JSON.parse(atob(payloadBase64));
+        const exp = payload.exp;
+
+        return exp * 1000 < Date.now(); // exp é em segundos, Date.now() em milissegundos
+    } catch (e) {
+        return true; // Se der erro, considera expirado
+    }
+}
+
 // Função de logout
 function logout() {
     localStorage.removeItem("usuarioLogado");
+    localStorage.removeItem("idCliente");
     window.location.href = "index.html";
 }
