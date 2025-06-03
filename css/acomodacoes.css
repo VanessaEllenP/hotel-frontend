@@ -328,3 +328,18 @@ body {
   .voltar-btn:hover {
     background-color: var(--indigo-dye);
   }
+
+  @media (max-width: 1400px) {
+    .card-quarto {
+        width: 40%; /* usa quase toda a largura da tela */
+        height: auto;
+    }
+
+    .card-quarto img {
+        height: 250px; /* imagem menor para deixar espaço para o botão */
+    }
+
+    .paginacao{
+        margin-top: 0px;
+    }
+}
