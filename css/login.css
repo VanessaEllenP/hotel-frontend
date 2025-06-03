@@ -22,7 +22,7 @@
 body {
   margin: 0;
   height: 100vh;
-  font-family: 'mont', sans-serif;
+  font-family: 'mont';
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,3 +185,5 @@ body::before {
 .oculto {
   display: none;
 }
+
+
