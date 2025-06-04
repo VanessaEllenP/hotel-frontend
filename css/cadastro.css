@@ -245,8 +245,6 @@ input::placeholder {
   transition: color 0.3s ease;
 }
 
-
-/* Botão voltar (segunda declaração para ajuste de posição e cor) */
 .voltar-btn {
   position: absolute;
   top: 60px;
@@ -261,4 +259,105 @@ input::placeholder {
 
 .voltar-btn:hover {
   background-color: var(--indigo-dye);
+}
+
+@media (max-width: 1400px) {
+  .caixa {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    padding: 130px 30px 40px; 
+    gap: 25px;
+    position: relative;
+    
+  }
+
+  .img-logo {
+    position: relative; 
+    top: auto;  
+    margin-bottom: -50px; 
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-logo img {
+    width: 180px;
+    height: auto;
+  }
+
+  .formulario {
+    margin-top: 0; 
+    gap: 25px;
+  }
+
+
+  .nome,
+  .sobrenome,
+  .email,
+  #dataNascimento,
+  .input-senha-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .caixa-telefone {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .ddd {
+    width: 30%;
+    min-width: 80px;
+  }
+
+  .celular {
+    width: 68%;
+    min-width: 150px;
+  }
+
+  .input-senha-container {
+    height: 40px;
+  }
+
+  .input-senha-container input {
+    padding-right: 40px;
+  }
+
+  .toggle-senha,
+  .toggle-confirme-senha {
+    right: 12px;
+    font-size: 18px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 250px;
+    font-size: 17px;
+  }
+
+  .botaoCaixa{
+    width: 200px;
+  }
+
+  .voltar-btn {
+    top: 20px;
+    left: 20px;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .modal-conteudo {
+    width: 90%;
+    max-width: 360px;
+    font-size: 15px;
+    padding: 20px;
+  }
+
+  #fecharModal {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
 }

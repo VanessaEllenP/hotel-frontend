@@ -355,6 +355,69 @@ body {
     color: var(--lion);
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.modal-content p {
+  margin: 20px 0;
+  font-size: 16px;
+  color: var(--rich-black);
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+
 @media (max-width: 1400px) {
   .quarto-container {
     display: flex;         
@@ -362,8 +425,9 @@ body {
     justify-content: center; 
     align-items: flex-start;
     gap: 40px;
-    flex-wrap: wrap;        
+    flex-wrap: nowrap; 
     padding: 20px;
+    min-height: 500px; 
   }
 
   .quarto-imagem img {
@@ -380,7 +444,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     position: sticky;
-    top: 120px;
+    top: 70px; 
+    z-index: 10; 
   }
 
   .quarto-info {
@@ -397,7 +462,7 @@ body {
 }
 
   .voltar-btn {
-    left: 60px;
+    left: 70px;
     font-size: 17px;
   }
 

@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   const checkout = params.get('checkout') || '--';
   const total = parseFloat(params.get('total')) || 0;
 
-  // Pega cliente logado do localStorage
   const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
   const clienteId = usuarioLogado?.idCliente;
   const token = usuarioLogado?.token;
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     return;
   }
 
-  // Elementos HTML para exibir info
   document.getElementById('reservaId').textContent = `Reserva #${reservaId}`;
   document.getElementById('tipoQuarto').textContent = nomeQuarto;
   document.getElementById('dataCheckin').textContent = formatarData(checkin);
@@ -27,6 +25,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   const metodoPagamento = document.getElementById('metodoPagamento');
   const formularioPagamento = document.getElementById('formularioPagamento');
   const confirmarBtn = document.getElementById('confirmarBtn');
+  const mensagemErro = document.getElementById('mensagemErro');
 
   function formatarData(dataStr) {
     if (!dataStr) return '--';
@@ -66,33 +65,36 @@ document.addEventListener('DOMContentLoaded', async function () {
   atualizarFormularioPagamento();
 
   confirmarBtn.addEventListener('click', async function () {
-    // Validar campos de pagamento
     const metodo = metodoPagamento.value;
+
     if (metodo === 'pix') {
       const nome = formularioPagamento.querySelector('input[placeholder="Nome"]');
       const sobrenome = formularioPagamento.querySelector('input[placeholder="Sobrenome"]');
       const cpf = formularioPagamento.querySelector('input[placeholder="CPF"]');
+
       if (!nome.value.trim() || !sobrenome.value.trim() || !cpf.value.trim()) {
-        alert('Preencha todos os campos para o pagamento via PIX.');
+        mostrarErro('Por favor, preencha todos os campos para o pagamento via PIX.');
         return;
       }
+
     } else if (metodo === 'cartao') {
       const nomeCartao = formularioPagamento.querySelector('input[placeholder="Nome no Cartão"]');
       const numeroCartao = formularioPagamento.querySelector('input[placeholder="Número do Cartão"]');
       const validade = formularioPagamento.querySelector('input[placeholder="Validade (MM/AA)"]');
       const cvv = formularioPagamento.querySelector('input[placeholder="CVV"]');
       const parcelas = formularioPagamento.querySelector('select');
+
       if (!nomeCartao.value.trim() || !numeroCartao.value.trim() || !validade.value.trim() || !cvv.value.trim() || !parcelas.value) {
-        alert('Preencha todos os campos para o pagamento com cartão.');
+        mostrarErro('Por favor, preencha todos os campos para o pagamento com cartão.');
         return;
       }
+
     } else {
-      alert('Selecione um método de pagamento válido.');
+      mostrarErro('Selecione um método de pagamento válido.');
       return;
     }
 
     try {
-      // Chamada PUT para atualizar reserva com status CONFIRMADA
       const response = await fetch(`https://hotel-backend-la2w.onrender.com/api/reservas/${reservaId}`, {
         method: 'PUT',
         headers: {
@@ -107,11 +109,18 @@ document.addEventListener('DOMContentLoaded', async function () {
 
       if (!response.ok) throw new Error('Falha ao confirmar reserva');
 
-      // Redireciona para página de confirmação
       window.location.href = `pagamento-confirmado.html?reserva=${reservaId}&total=${total}&quarto=${encodeURIComponent(nomeQuarto)}&checkin=${checkin}&checkout=${checkout}`;
 
     } catch (error) {
-      alert('Erro ao confirmar reserva: ' + error.message);
+      mostrarErro('Erro ao confirmar reserva: ' + error.message);
     }
   });
+
+  function mostrarErro(mensagem) {
+    mensagemErro.textContent = mensagem;
+    mensagemErro.style.display = 'block';
+    setTimeout(() => {
+      mensagemErro.style.display = 'none';
+    }, 5000);
+  }
 });

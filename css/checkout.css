@@ -357,3 +357,18 @@ label {
     background-size: 14px;
 }
 
+  #mensagemErro {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+@media (max-width: 1400px) {
+    .voltar-btn {
+        top: 120px;
+    }
+}

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     noitesInput.name = 'noites';
     document.querySelector('form').appendChild(noitesInput);
 
-    const nomeTipoInput = document.createElement('input'); // CAMPO OCULTO PARA O NOME DO TIPO DE QUARTO
+    const nomeTipoInput = document.createElement('input');
     nomeTipoInput.type = 'hidden';
     nomeTipoInput.name = 'nomeTipoQuarto';
     document.querySelector('form').appendChild(nomeTipoInput);
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         precoPorNoite = parseFloat(dados.precoNoite) || 0;
         precoElemento.innerHTML = `R$${precoPorNoite.toFixed(2).replace('.', ',')} <small>/ noite</small>`;
         descricaoElemento.textContent = dados.tipoDescricao || '';
-        nomeTipoInput.value = dados.tipoDescricao || ''; // Preenche campo oculto com nome do tipo de quarto
+        nomeTipoInput.value = dados.tipoDescricao || '';
 
         comodidadesLista.innerHTML = '';
         if (Array.isArray(dados.comodidades) && dados.comodidades.length) {
@@ -113,7 +113,26 @@ document.addEventListener('DOMContentLoaded', async function () {
             const clienteId = usuarioLogado?.idCliente;
 
             if (!token || !clienteId) {
-                alert('Você precisa estar logado para fazer a reserva.');
+                const modal = document.getElementById('loginModal');
+                const closeBtn = document.querySelector('.close-btn');
+                const goToLoginBtn = document.getElementById('goToLoginBtn');
+
+                modal.style.display = 'block';
+
+                closeBtn.onclick = function () {
+                    modal.style.display = 'none';
+                };
+
+                window.onclick = function (event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                };
+
+                goToLoginBtn.onclick = function () {
+                    window.location.href = 'login.html';
+                };
+
                 return;
             }
 
